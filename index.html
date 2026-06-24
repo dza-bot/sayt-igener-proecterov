@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инженер-проектировщик | Профессия будущего</title>
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --border: #475569;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--text-primary);
+            background: var(--bg-card);
+        }
+
+        nav a.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            padding: 5px;
+        }
+
+        .burger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .burger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .burger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem;
+            z-index: 999;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            transition: 0.3s;
+        }
+
+        .mobile-menu a:hover,
+        .mobile-menu a.active {
+            background: var(--bg-card);
+            color: var(--text-primary);
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .breadcrumbs a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumbs span {
+            margin: 0 0.5rem;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: calc(100vh - 200px);
+        }
+
+        /* Page Container */
+        .page {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            border: 1px solid var(--border);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent), var(--success));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .skill-category h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        .skill-tag {
+            background: var(--bg-card);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+        }
+
+        /* Career Section */
+        .salary-chart {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .year-tabs {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .year-tab {
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border: none;
+            border-radius: 8px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.875rem;
+        }
+
+        .year-tab:hover,
+        .year-tab.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        .chart-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .bar-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .bar-label {
+            min-width: 150px;
+            font-size: 0.875rem;
+        }
+
+        .bar-container {
+            flex: 1;
+            height: 30px;
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--success));
+            border-radius: 8px;
+            transition: width 0.8s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table th {
+            background: var(--bg-card);
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .data-table tr:hover {
+            background: var(--bg-card);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+        }
+
+        .faq-item {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-card);
+        }
+
+        .faq-arrow {
+            transition: transform 0.3s;
+            font-size: 1.25rem;
+        }
+
+        .faq-item.active .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.25rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-secondary);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.25rem 1.25rem;
+            max-height: 500px;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 600px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.75rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group.error input,
+        .form-group.error textarea {
+            border-color: var(--error);
+        }
+
+        .error-message {
+            color: var(--error);
+            font-size: 0.75rem;
+            display: none;
+        }
+
+        .form-group.error .error-message {
+            display: block;
+        }
+
+        .submit-btn {
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-hover);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .form-success {
+            display: none;
+            padding: 1rem;
+            background: rgba(16, 185, 129, 0.2);
+            border-radius: 8px;
+            color: var(--success);
+            text-align: center;
+        }
+
+        .form-success.show {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--text-primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-card);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            transition: 0.3s;
+            font-size: 1.25rem;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .visit-counter {
+            margin-top: 0.5rem;
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .burger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .stat-value {
+                font-size: 1.75rem;
+            }
+
+            .bar-item {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .bar-label {
+                min-width: auto;
+            }
+
+            .chart-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .year-tabs {
+                justify-content: center;
+            }
+
+            .data-table {
+                font-size: 0.875rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 0.75rem 0.5rem;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo" onclick="navigateTo(event, '/')">
+                <span class="logo-icon">⚙️</span>
+                ИнженерПро
+            </a>
+            <nav>
+                <a href="/" onclick="navigateTo(event, '/')" data-page="/">Главная</a>
+                <a href="/about" onclick="navigateTo(event, '/about')" data-page="/about">О профессии</a>
+                <a href="/skills" onclick="navigateTo(event, '/skills')" data-page="/skills">Навыки</a>
+                <a href="/career" onclick="navigateTo(event, '/career')" data-page="/career">Карьера</a>
+                <a href="/faq" onclick="navigateTo(event, '/faq')" data-page="/faq">FAQ</a>
+            </nav>
+            <div class="burger" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="/" onclick="navigateTo(event, '/')" data-page="/">Главная</a>
+            <a href="/about" onclick="navigateTo(event, '/about')" data-page="/about">О профессии</a>
+            <a href="/skills" onclick="navigateTo(event, '/skills')" data-page="/skills">Навыки</a>
+            <a href="/career" onclick="navigateTo(event, '/career')" data-page="/career">Карьера</a>
+            <a href="/faq" onclick="navigateTo(event, '/faq')" data-page="/faq">FAQ</a>
+        </div>
+    </header>
+
+    <div class="breadcrumbs" id="breadcrumbs"></div>
+
+    <main>
+        <!-- Главная страница -->
+        <div class="page active" id="page-home">
+            <div class="hero">
+                <h1>Инженер-проектировщик</h1>
+                <p>Профессия, которая создаёт мир вокруг нас. Проектируйте здания, мосты и целые города будущего.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">85 000 ₽</div>
+                        <div class="stat-label">Средняя зарплата</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">5 000+</div>
+                        <div class="stat-label">Вакансий в месяц</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">4.8/5</div>
+                        <div class="stat-label">Рейтинг профессии</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Почему эта профессия?</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🏗️</div>
+                    <h3>Видимый результат</h3>
+                    <p>Вы видите плоды своего труда — здания, мосты, инфраструктуру, которой пользуются миллионы людей.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h3>Стабильный спрос</h3>
+                    <p>Строительная отрасль в России растёт. Каждый год вводится более 120 млн м² жилья.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💡</div>
+                    <h3>Инновации</h3>
+                    <p>BIM-технологии, параметрическое проектирование,智慧建筑 — будущее уже здесь.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🌍</div>
+                    <h3>Международные проекты</h3>
+                    <p>Российские инженеры работают над проектами в Азии, Африке и Ближнем Востоке.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📚</div>
+                    <h3>Постоянное обучение</h3>
+                    <p>Каждый проект — новая задача. Вы никогда не остановитесь в развитии.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎓</div>
+                    <h3>Престижное образование</h3>
+                    <p>Диплом строительного вуза — это пропуск в мир высоких технологий и больших денег.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- О профессии -->
+        <div class="page" id="page-about">
+            <h1 class="section-title">О профессии инженера-проектировщика</h1>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">📋</div>
+                    <h3>Кто это?</h3>
+                    <p>Инженер-проектировщик — специалист, который разрабатывает техническую документацию для строительства объектов. Он превращает архитектурные идеи в точные чертежи и расчёты.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔧</div>
+                    <h3>Что делает?</h3>
+                    <p>Разрабатывает рабочую документацию, выполняет инженерные расчёты, координирует работу с архитекторами и подрядчиками, контролирует соответствие нормативам.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📐</div>
+                    <h3>Специализации</h3>
+                    <p>Конструкции зданий, инженерные сети (ВОК, ЭМС, СС), дороги и мосты, промышленные объекты, гидротехнические сооружения.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title" style="margin-top: 3rem;">Нормативная база</h2>
+            <div class="skill-category">
+                <h3>Ключевые документы</h3>
+                <ul class="skill-list">
+                    <li><span class="skill-tag">СНиП</span> Строительные нормы и правила</li>
+                    <li><span class="skill-tag">СП</span> Своды правил (актуальные замены СНиП)</li>
+                    <li><span class="skill-tag">ГОСТ</span> Государственные стандарты</li>
+                    <li><span class="skill-tag">ТКП</span> Технические кодексы установившейся практики</li>
+                    <li><span class="skill-tag">РД</span> Руководящие документы отрасли</li>
+                </ul>
+            </div>
+
+            <h2 class="section-title" style="margin-top: 3rem;">Рабочий процесс</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>1. Техническое задание</h3>
+                    <p>Получение требований от заказчика: размеры, материалы, бюджет, сроки.</p>
+                </div>
+                <div class="card">
+                    <h3>2. Эскизное проектирование</h3>
+                    <p>Разработка вариантов решения, выбор оптимального подхода.</p>
+                </div>
+                <div class="card">
+                    <h3>3. Рабочая документация</h3>
+                    <p>Детальные чертежи, спецификации, ведомости объёмов работ.</p>
+                </div>
+                <div class="card">
+                    <h3>4. Экспертиза</h3>
+                    <p>Прохождение государственной или независимой экспертизы проекта.</p>
+                </div>
+                <div class="card">
+                    <h3>5. Авторский надзор</h3>
+                    <p>Контроль соответствия проекту при строительстве на площадке.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Навыки и инструменты -->
+        <div class="page" id="page-skills">
+            <h1 class="section-title">Навыки и инструменты</h1>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>💻 Программное обеспечение</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-tag">AutoCAD</span> 2D/3D черчение</li>
+                        <li><span class="skill-tag">Revit</span> BIM-проектирование</li>
+                        <li><span class="skill-tag">Tekla</span> Стальные конструкции</li>
+                        <li><span class="skill-tag">SCAD</span> Расчёт конструкций</li>
+                        <li><span class="skill-tag">1С:ПИС</span> Управление проектом</li>
+                        <li><span class="skill-tag">NanoCAD</span> Отечественная САПР</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>📊 Расчёты и анализ</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-tag">ЛСМ</span> Метод конечных элементов</li>
+                        <li><span class="skill-tag">ANSYS</span> Инженерный анализ</li>
+                        <li><span class="skill-tag">Mathcad</span> Инженерные расчёты</li>
+                        <li><span class="skill-tag">Excel</span> Таблицы и формулы</li>
+                        <li><span class="skill-tag">Python</span> Автоматизация расчётов</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>🏗️ Технические знания</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-tag">Сопромат</span> Сопротивление материалов</li>
+                        <li><span class="skill-tag">ТМЕП</span> Теория механизмов</li>
+                        <li><span class="skill-tag">Строит. механика</span> Расчёт сооружений</li>
+                        <li><span class="skill-tag">Инж. сети</span> Водоснабжение, канализация</li>
+                        <li><span class="skill-tag">Электрика</span> Силовые и слаботочные сети</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>🤝 Soft Skills</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-tag">Аналитика</span> Системное мышление</li>
+                        <li><span class="skill-tag">Коммуникация</span> Работа в команде</li>
+                        <li><span class="skill-tag">Тайм-менеджмент</span> Управление сроками</li>
+                        <li><span class="skill-tag">Внимание к деталям</span> Точность</li>
+                        <li><span class="skill-tag">Стрессоустойчивость</span> Дедлайны</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 class="section-title" style="margin-top: 3rem;">BIM-технологии — будущее профессии</h2>
+            <div class="card" style="max-width: 800px;">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Building Information Modeling (BIM) — это подход к проектированию, при котором создаётся не просто чертёж, а информационная модель здания. В России переход на BIM обязателен для государственных объектов с 2022 года.</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <span class="skill-tag">Revit</span>
+                    <span class="skill-tag">Archicad</span>
+                    <span class="skill-tag">Tekla</span>
+                    <span class="skill-tag">Navisworks</span>
+                    <span class="skill-tag">BIM 360</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карьера и зарплаты -->
+        <div class="page" id="page-career">
+            <h1 class="section-title">Карьера и зарплаты</h1>
+            
+            <div class="salary-chart">
+                <div class="chart-header">
+                    <h2>Средние зарплаты по регионам</h2>
+                    <div class="year-tabs">
+                        <button class="year-tab" onclick="switchYear(2023)">2023</button>
+                        <button class="year-tab" onclick="switchYear(2024)">2024</button>
+                        <button class="year-tab active" onclick="switchYear(2025)">2025</button>
+                    </div>
+                </div>
+                <div class="chart-bars" id="salaryChart">
+                    <div class="bar-item">
+                        <span class="bar-label">Москва</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 95%;">150 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Санкт-Петербург</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 75%;">110 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Казань</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 60%;">85 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Екатеринбург</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 58%;">82 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Новосибирск</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 55%;">78 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Регионы</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 45%;">62 000 ₽</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Карьерный рост</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Позиция</th>
+                        <th>Опыт</th>
+                        <th>Зарплата (₽)</th>
+                        <th>Обязанности</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Стажёр</td>
+                        <td>0-1 год</td>
+                        <td>35 000 - 50 000</td>
+                        <td>Чертежи, спецификации, поддержка</td>
+                    </tr>
+                    <tr>
+                        <td>Инженер-проектировщик</td>
+                        <td>1-3 года</td>
+                        <td>60 000 - 90 000</td>
+                        <td>Разработка документации, расчёты</td>
+                    </tr>
+                    <tr>
+                        <td>Ведущий инженер</td>
+                        <td>3-5 лет</td>
+                        <td>90 000 - 130 000</td>
+                        <td>Курирование разделов, наставничество</td>
+                    </tr>
+                    <tr>
+                        <td>Руководитель группы</td>
+                        <td>5-8 лет</td>
+                        <td>130 000 - 180 000</td>
+                        <td>Управление командой, согласования</td>
+                    </tr>
+                    <tr>
+                        <td>Главный инженер проекта</td>
+                        <td>8+ лет</td>
+                        <td>180 000 - 300 000+</td>
+                        <td>Всё проектное управление</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 class="section-title" style="margin-top: 3rem;">Где работать?</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🏢</div>
+                    <h3>Проектные организации</h3>
+                    <p>Крупные ГПК: «Моспроект», «Технопром», «Стройпроект». Стабильная работа, соцпакет.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏗️</div>
+                    <h3>Строительные компании</h3>
+                    <p>ПСО, «Акадо», «ПИК», «Самолёт». Высокие зарплаты, динамика.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏛️</div>
+                    <h3>Государственные структуры</h3>
+                    <p>Минстрой, «Российские дороги», «Роскосмос». Пенсия, отпуска.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💼</div>
+                    <h3>Фриланс</h3>
+                    <p>Собственное бюро, удалёнка. Свободный график, но нужна дисциплина.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="page" id="page-faq">
+            <h1 class="section-title">Вопросы и ответы</h1>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Нужно ли высшее образование?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Для работы инженером-проектировщиком необходимо высшее техническое образование (строительный или архитектурный вуз). Для получения квалификации «инженер» нужно отучиться минимум 5 лет в магистратуре или 4 года в бакалавриате + 1 год магистратуры.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Сколько времени нужно учиться?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Базовое высшее образование: 4-5 лет. После этого рекомендуется 1-2 года поработать стажёром под руководством опытного специалиста. Полная самостоятельность приходит через 3-5 лет практики.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Какие вузы лучше выбрать?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Топ-5 вузов для инженеров-проектировщиков в России: МГСУ (Московский государственный строительный университет), СПбГАСУ (Санкт-Петербургский архитектурно-строительный университет), НИУ МГСУ, Казанский федеральный университет, Новосибирский государственный архитектурно-строительный университет (СибSTRU).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Возможно ли работать удалённо?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, особенно после пандемииmany проектные бюро перешли на гибридный формат. Более 40% инженеров работают удалённо или в гибком графике. Однако выезды на площадку и совещания в офисе всё ещё необходимы.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Какие перспективы карьерного роста?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Карьерная лестница: стажёр → инженер → ведущий инженер → руководитель группы → главный инженер проекта → технический директор. Также можно открыть собственное проектное бюро или стать преподавателем в вузе.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Какие документы нужно оформить для работы?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Для работы в проектной организации необходим диплом о высшем образовании, аттестат проектной организации (для подписания документации), сертификат по охране труда, электронная подпись для работы с ГИС и ЭДО.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Что такое BIM и почему это важно?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Building Information Modeling (BIM) — технология создания информационной модели здания. С 2022 года все государственные объекты в России проектируются в BIM. Это повышает производительность на 30% и снижает ошибки. Владение BIM — обязательное требование для карьерного роста.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Какие сертификаты помогут в карьере?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Полезные сертификаты: Autodesk Certified Professional (Revit, AutoCAD), сертификат по BIM-технологиям, квалификация «Профессиональный проектировщик» от СРО, сертификат по управлению проектами (PMP или аналог).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>ИнженерПро</h4>
+                <p>Информационный портал о профессии инженера-проектировщика. Актуальные данные, карьерные советы, обзоры инструментов.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" title="Telegram">✈️</a>
+                    <a href="#" class="social-link" title="VK">📱</a>
+                    <a href="#" class="social-link" title="YouTube">▶️</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Разделы</h4>
+                <a href="/" onclick="navigateTo(event, '/')">Главная</a>
+                <a href="/about" onclick="navigateTo(event, '/about')">О профессии</a>
+                <a href="/skills" onclick="navigateTo(event, '/skills')">Навыки и инструменты</a>
+                <a href="/career" onclick="navigateTo(event, '/career')">Карьера и зарплаты</a>
+                <a href="/faq" onclick="navigateTo(event, '/faq')">Вопросы и ответы</a>
+            </div>
+            <div class="footer-section">
+                <h4>Контакты</h4>
+                <p>📧 info@engineerpro.ru</p>
+                <p>📞 +7 (495) 123-45-67</p>
+                <p>📍 Москва, ул. Строителей, 25</p>
+            </div>
+            <div class="footer-section">
+                <h4>Обратная связь</h4>
+                <form class="contact-form" id="contactForm" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label for="name">Имя *</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message">Введите ваше имя</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message">Введите корректный email</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение *</label>
+                        <textarea id="message" name="message" required></textarea>
+                        <span class="error-message">Введите сообщение</span>
+                    </div>
+                    <button type="submit" class="submit-btn">Отправить</button>
+                    <div class="form-success" id="formSuccess">
+                        ✅ Сообщение отправлено! Мы ответим в ближайшее время.
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 ИнженерПро. Все права защищены.</p>
+            <p class="visit-counter">Посещений страницы: <span id="visitCount">0</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // Routes configuration
+        const routes = {
+            '/': { page: 'home', title: 'Главная', breadcrumb: [{text: 'Главная', url: '/'}] },
+            '/about': { page: 'about', title: 'О профессии', breadcrumb: [{text: 'Главная', url: '/'}, {text: 'О профессии', url: '/about'}] },
+            '/skills': { page: 'skills', title: 'Навыки и инструменты', breadcrumb: [{text: 'Главная', url: '/'}, {text: 'Навыки', url: '/skills'}] },
+            '/career': { page: 'career', title: 'Карьера и зарплаты', breadcrumb: [{text: 'Главная', url: '/'}, {text: 'Карьера', url: '/career'}] },
+            '/faq': { page: 'faq', title: 'Вопросы и ответы', breadcrumb: [{text: 'Главная', url: '/'}, {text: 'FAQ', url: '/faq'}] }
+        };
+
+        // Salary data by year
+        const salaryData = {
+            2023: [
+                { region: 'Москва', value: 135000, width: '90%' },
+                { region: 'Санкт-Петербург', value: 100000, width: '72%' },
+                { region: 'Казань', value: 78000, width: '56%' },
+                { region: 'Екатеринбург', value: 75000, width: '54%' },
+                { region: 'Новосибирск', value: 72000, width: '52%' },
+                { region: 'Регионы', value: 56000, width: '40%' }
+            ],
+            2024: [
+                { region: 'Москва', value: 142000, width: '93%' },
+                { region: 'Санкт-Петербург', value: 105000, width: '74%' },
+                { region: 'Казань', value: 82000, width: '58%' },
+                { region: 'Екатеринбург', value: 78000, width: '56%' },
+                { region: 'Новосибирск', value: 75000, width: '54%' },
+                { region: 'Регионы', value: 59000, width: '42%' }
+            ],
+            2025: [
+                { region: 'Москва', value: 150000, width: '95%' },
+                { region: 'Санкт-Петербург', value: 110000, width: '75%' },
+                { region: 'Казань', value: 85000, width: '60%' },
+                { region: 'Екатеринбург', value: 82000, width: '58%' },
+                { region: 'Новосибирск', value: 78000, width: '55%' },
+                { region: 'Регионы', value: 62000, width: '45%' }
+            ]
+        };
+
+        let currentYear = 2025;
+
+        function getCurrentRoute() {
+            var hash = window.location.hash.replace('#', '') || '/';
+            if (!routes[hash]) hash = '/';
+            return hash;
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateVisitCount();
+            handleRoute();
+        });
+
+        // Handle route changes
+        function handleRoute() {
+            var path = getCurrentRoute();
+            var route = routes[path];
+            
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(function(page) {
+                page.classList.remove('active');
+            });
+            
+            // Show current page
+            var pageElement = document.getElementById('page-' + route.page);
+            if (pageElement) {
+                pageElement.classList.add('active');
+            }
+            
+            // Update title
+            document.title = route.title + ' | ИнженерПро';
+            
+            // Update breadcrumbs
+            updateBreadcrumbs(route.breadcrumb);
+            
+            // Update active nav
+            updateActiveNav(path);
+            
+            // Close mobile menu
+            closeMobileMenu();
+            
+            // Update visit count for this page
+            updatePageVisitCount(path);
+        }
+
+        // Navigate to page
+        function navigateTo(e, path) {
+            if (e) e.preventDefault();
+            
+            // Add to history
+            history.pushState({ path: path }, '', '#' + path);
+            
+            // Handle route
+            handleRoute();
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Handle back/forward buttons
+        window.addEventListener('popstate', handleRoute);
+        window.addEventListener('hashchange', handleRoute);
+
+        // Update breadcrumbs
+        function updateBreadcrumbs(breadcrumbs) {
+            var container = document.getElementById('breadcrumbs');
+            var html = '';
+            
+            breadcrumbs.forEach(function(item, index) {
+                if (index > 0) {
+                    html += '<span>›</span>';
+                }
+                if (index === breadcrumbs.length - 1) {
+                    html += '<span>' + item.text + '</span>';
+                } else {
+                    html += '<a href="#' + item.url + '" onclick="navigateTo(event, \'' + item.url + '\')">' + item.text + '</a>';
+                }
+            });
+            
+            container.innerHTML = html;
+        }
+
+        // Update active navigation
+        function updateActiveNav(path) {
+            document.querySelectorAll('nav a, .mobile-menu a').forEach(function(link) {
+                link.classList.remove('active');
+                if (link.getAttribute('data-page') === path) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Mobile menu
+        function toggleMobileMenu() {
+            var burger = document.querySelector('.burger');
+            var menu = document.getElementById('mobileMenu');
+            
+            burger.classList.toggle('active');
+            menu.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            var burger = document.querySelector('.burger');
+            var menu = document.getElementById('mobileMenu');
+            
+            burger.classList.remove('active');
+            menu.classList.remove('active');
+        }
+
+        // Visit counter
+        function updateVisitCount() {
+            var visits = localStorage.getItem('siteVisits') || 0;
+            visits = parseInt(visits) + 1;
+            localStorage.setItem('siteVisits', visits);
+            document.getElementById('visitCount').textContent = visits;
+        }
+
+        function updatePageVisitCount(path) {
+            var key = 'pageVisits_' + path;
+            var visits = localStorage.getItem(key) || 0;
+            visits = parseInt(visits) + 1;
+            localStorage.setItem(key, visits);
+        }
+
+        // Switch year in salary chart
+        function switchYear(year) {
+            currentYear = year;
+            
+            // Update tabs
+            document.querySelectorAll('.year-tab').forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Update chart
+            var chart = document.getElementById('salaryChart');
+            var data = salaryData[year];
+            
+            chart.innerHTML = data.map(function(item) {
+                return '<div class="bar-item"><span class="bar-label">' + item.region + '</span><div class="bar-container"><div class="bar-fill" style="width: ' + item.width + ';">' + item.value.toLocaleString('ru-RU') + ' ₽</div></div></div>';
+            }).join('');
+        }
+
+        // FAQ toggle
+        function toggleFaq(element) {
+            var item = element.parentElement;
+            var wasActive = item.classList.contains('active');
+            
+            // Close all items
+            document.querySelectorAll('.faq-item').forEach(function(faq) {
+                faq.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!wasActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // Form submission
+        function submitForm(e) {
+            e.preventDefault();
+            
+            var form = e.target;
+            var name = form.querySelector('#name');
+            var email = form.querySelector('#email');
+            var message = form.querySelector('#message');
+            var isValid = true;
+            
+            // Reset errors
+            form.querySelectorAll('.form-group').forEach(function(group) {
+                group.classList.remove('error');
+            });
+            
+            // Validate name
+            if (!name.value.trim()) {
+                name.parentElement.classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate email
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.value.trim() || !emailRegex.test(email.value)) {
+                email.parentElement.classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate message
+            if (!message.value.trim()) {
+                message.parentElement.classList.add('error');
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Show success message
+                document.getElementById('formSuccess').classList.add('show');
+                form.reset();
+                
+                // Hide success message after 5 seconds
+                setTimeout(function() {
+                    document.getElementById('formSuccess').classList.remove('show');
+                }, 5000);
+            }
+        }
+    </script>
+</body>
+</html>
