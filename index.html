@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Инженер-проектировщик | Профессия будущего</title>
+    <title>Инженер-проектировщик | Эр Телеком Холдинг</title>
     <style>
         :root {
             --bg-primary: #0f172a;
@@ -730,6 +730,311 @@
             color: var(--accent);
         }
 
+        /* Section Subtitle */
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            margin-top: -0.5rem;
+        }
+
+        /* Who Section */
+        .who-section {
+            margin-bottom: 3rem;
+        }
+
+        .who-card {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .who-icon {
+            font-size: 3rem;
+            flex-shrink: 0;
+        }
+
+        .who-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .who-content strong {
+            color: var(--accent);
+        }
+
+        .who-keywords {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .who-kw {
+            background: var(--accent);
+            color: white;
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Tasks Section */
+        .tasks-section {
+            margin-bottom: 3rem;
+        }
+
+        .tasks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .task-card {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .task-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .task-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            opacity: 0.25;
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+        }
+
+        .task-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .task-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Skills Home Section */
+        .skills-section-home {
+            margin-bottom: 3rem;
+        }
+
+        .skills-home-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .skill-home-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            transition: transform 0.3s;
+        }
+
+        .skill-home-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .skill-home-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .skill-home-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .skill-home-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Career Student Section */
+        .career-student-section {
+            margin-bottom: 3rem;
+        }
+
+        .career-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 800px;
+        }
+
+        .career-step {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            transition: transform 0.3s;
+        }
+
+        .career-step:hover {
+            transform: translateX(5px);
+        }
+
+        .step-marker {
+            width: 44px;
+            height: 44px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Day Timeline Section */
+        .day-section {
+            margin-bottom: 3rem;
+        }
+
+        .day-timeline {
+            max-width: 700px;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .day-timeline::before {
+            content: '';
+            position: absolute;
+            left: 14px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .day-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .day-item::before {
+            content: '';
+            position: absolute;
+            left: -2.15rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 2px solid var(--bg-primary);
+            z-index: 1;
+        }
+
+        .day-time {
+            min-width: 70px;
+            max-width: 70px;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1rem;
+            flex-shrink: 0;
+            padding-top: 0.15rem;
+        }
+
+        .day-desc {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.25rem;
+            border: 1px solid var(--border);
+            flex: 1;
+        }
+
+        .day-desc h3 {
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .day-desc p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Company Section */
+        .company-section {
+            margin-bottom: 2rem;
+        }
+
+        .company-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .company-card {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .company-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .company-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .company-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+            color: var(--accent);
+        }
+
+        .company-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             nav {
@@ -777,6 +1082,37 @@
             .data-table th,
             .data-table td {
                 padding: 0.75rem 0.5rem;
+            }
+
+            .who-card {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .tasks-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-home-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .career-step {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .day-timeline {
+                padding-left: 2.5rem;
+            }
+
+            .day-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .company-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -835,9 +1171,10 @@
     <main>
         <!-- Главная страница -->
         <div class="page active" id="page-home">
+            <!-- Hero Section -->
             <div class="hero">
                 <h1>Инженер-проектировщик</h1>
-                <p>Профессия, которая создаёт мир вокруг нас. Проектируйте здания, мосты и целые города будущего.</p>
+                <p>Проектируйте здания, мосты и инфраструктуру, которой пользуются миллионы людей.</p>
                 <div class="hero-stats">
                     <div class="stat-item">
                         <div class="stat-value">85 000 ₽</div>
@@ -847,44 +1184,220 @@
                         <div class="stat-value">5 000+</div>
                         <div class="stat-label">Вакансий в месяц</div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-value">4.8/5</div>
-                        <div class="stat-label">Рейтинг профессии</div>
+                </div>
+            </div>
+
+            <!-- Кто такой инженер-проектировщик простыми словами -->
+            <div class="who-section">
+                <h2 class="section-title">Кто такой инженер-проектировщик?</h2>
+                <div class="who-card">
+                    <div class="who-icon">🧑‍💻</div>
+                    <div class="who-content">
+                        <p>Инженер-проектировщик — это специалист, который <strong>превращает идею в готовый проект</strong>. Он берёт пожелания заказчика и архитектора и создаёт подробные чертежи, расчёты и документацию, по которым строители потом возводят здание.</p>
+                        <p>Представьте: архитектор нарисовал красивый дом. А инженер-проектировщик считает, какие нужны стены, фундамент, трубы, провода — чтобы этот дом стоял 100 лет, в нём было тепло, светло и безопасно.</p>
+                        <div class="who-keywords">
+                            <span class="who-kw">Чертежи</span>
+                            <span class="who-kw">Расчёты</span>
+                            <span class="who-kw">Нормативы</span>
+                            <span class="who-kw">Документация</span>
+                            <span class="who-kw">Координация</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <h2 class="section-title">Почему эта профессия?</h2>
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">🏗️</div>
-                    <h3>Видимый результат</h3>
-                    <p>Вы видите плоды своего труда — здания, мосты, инфраструктуру, которой пользуются миллионы людей.</p>
+            <!-- Реальные рабочие задачи -->
+            <div class="tasks-section">
+                <h2 class="section-title">Реальные рабочие задачи</h2>
+                <p class="section-subtitle">С чем сталкивается инженер-проектировщик каждый день</p>
+                <div class="tasks-grid">
+                    <div class="task-card">
+                        <div class="task-number">01</div>
+                        <h3>Разработка чертежей фундамента</h3>
+                        <p>Проектирует тип и размеры фундамента под конкретный грунт, нагрузки здания и климатические условия. Считает армирование и объёмы бетона.</p>
+                    </div>
+                    <div class="task-card">
+                        <div class="task-number">02</div>
+                        <h3>Расчёт несущих конструкций</h3>
+                        <p>Определяет, какие колонны, балки и перекрытия нужны, чтобы здание выдерживало вес людей, мебели, снега и ветра. Использует программы расчёта.</p>
+                    </div>
+                    <div class="task-card">
+                        <div class="task-number">03</div>
+                        <h3>Проектирование инженерных сетей</h3>
+                        <p>Разводит по зданию трубы водоснабжения, канализации, отопления, вентиляции и электрики. Считает диаметры, мощности, потери.</p>
+                    </div>
+                    <div class="task-card">
+                        <div class="task-number">04</div>
+                        <h3>Подготовка проектной документации</h3>
+                        <p>Собирает полный комплект документов для экспертизы: пояснительные записки, спецификации, ведомости объёмов работ, сметы.</p>
+                    </div>
+                    <div class="task-card">
+                        <div class="task-number">05</div>
+                        <h3>Согласование с экспертизой</h3>
+                        <p>Защищает проект перед государственными экспертами, отвечает на замечания, вносит корректировки для получения положительного заключения.</p>
+                    </div>
+                    <div class="task-card">
+                        <div class="task-number">06</div>
+                        <h3>Авторский надзор на площадке</h3>
+                        <p>Выезжает на стройку, чтобы проверить — строители соблюдают проект. Решает вопросы по месту, вносит изменения при необходимости.</p>
+                    </div>
+                    <div class="task-card">
+                        <div class="task-number">07</div>
+                        <h3>Адаптация проекта под заказчика</h3>
+                        <p>Когда заказчик хочет изменить планировку или материалы, инженер пересчитывает конструкции и перерабатывает документацию с учётом новых требований.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="card-icon">📈</div>
-                    <h3>Стабильный спрос</h3>
-                    <p>Строительная отрасль в России растёт. Каждый год вводится более 120 млн м² жилья.</p>
+            </div>
+
+            <!-- Как начать карьеру студенту -->
+            <div class="career-student-section">
+                <h2 class="section-title">Как начать карьеру студенту?</h2>
+                <p class="section-subtitle">Пошаговый план для тех, кто учится или только планирует</p>
+                <div class="career-steps">
+                    <div class="career-step">
+                        <div class="step-marker">1</div>
+                        <div class="step-content">
+                            <h3>Выбери профильный вуз</h3>
+                            <p>Строительный или архитектурный факультет: МГСУ, СПбГАСУ, КФУ, СибSTRU (НГАСУ) или технический университет вашего города. Специальность — промышленное и гражданское строительство (08.03.01).</p>
+                        </div>
+                    </div>
+                    <div class="career-step">
+                        <div class="step-marker">2</div>
+                        <div class="step-content">
+                            <h3>Освой AutoCAD и Revit</h3>
+                            <p>Не жди, пока преподаватели расскажут. Учи AutoCAD самостоятельно на 1-2 курсе, на 3-4 — добавляй Revit. Бесплатные курсы на Autodesk Education, YouTube.</p>
+                        </div>
+                    </div>
+                    <div class="career-step">
+                        <div class="step-marker">3</div>
+                        <div class="step-content">
+                            <h3>Устроись стажёром</h3>
+                            <p>Уже на 3 курсе ищи стажировку в проектной организации. Даже бесплатно — опыт важнее. Понюхай реальные проекты, посмотри, как работает команда.</p>
+                        </div>
+                    </div>
+                    <div class="career-step">
+                        <div class="step-marker">4</div>
+                        <div class="step-content">
+                            <h3>Делай портфолио</h3>
+                            <p>Дипломный проект — это не просто корка. Сделай его шедевром. Нарисуй в Revit, посчитай в SCAD, оформи по ГОСТ. Это будет твой главный козырь на собеседовании.</p>
+                        </div>
+                    </div>
+                    <div class="career-step">
+                        <div class="step-marker">5</div>
+                        <div class="step-content">
+                            <h3>Получи сертификаты</h3>
+                            <p>Autodesk Certified Professional, курс по BIM — это добавит веса твоему резюме. Многие компании дают бонус к зарплате за сертификаты.</p>
+                        </div>
+                    </div>
+                    <div class="career-step">
+                        <div class="step-marker">6</div>
+                        <div class="step-content">
+                            <h3>Начинай с малого</h3>
+                            <p>Первые полгода — чертежи и спецификации. Потом — расчёты. Через год-два — полноценные разделы проекта. Растёт не только зарплата, но и ответственность.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="card-icon">💡</div>
-                    <h3>Инновации</h3>
-                    <p>BIM-технологии, параметрическое проектирование,智慧建筑 — будущее уже здесь.</p>
+            </div>
+
+            <!-- Один день из жизни -->
+            <div class="day-section">
+                <h2 class="section-title">Один день из жизни инженера-проектировщика</h2>
+                <p class="section-subtitle">Как выглядит типичный рабочий день</p>
+                <div class="day-timeline">
+                    <div class="day-item">
+                        <div class="day-time">09:00</div>
+                        <div class="day-desc">
+                            <h3>Начало дня</h3>
+                            <p>Приход в офис (или дома к компьютеру). Проверка почты: письма от заказчика, замечания экспертизы, ответы от смежных разделов. Кофе и план на день.</p>
+                        </div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-time">09:30</div>
+                        <div class="day-desc">
+                            <h3>Совещание по проекту</h3>
+                            <p>Созвон с архитектором: обсуждаете изменение планировки. Нужно понять, как это повлияет на несущие конструкции и инженерные сети.</p>
+                        </div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-time">10:00</div>
+                        <div class="day-desc">
+                            <h3>Работа в AutoCAD / Revit</h3>
+                            <p>Основное время — за чертежами. Дорабатываешь узлы, правишь спецификации, обновляешь планы после изменений от архитектора.</p>
+                        </div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-time">12:30</div>
+                        <div class="day-desc">
+                            <h3>Обед</h3>
+                            <p>Перекус, общение с коллегами. Иногда — обсуждение технических вопросов за обедом. Инженеры тоже люди.</p>
+                        </div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-time">13:30</div>
+                        <div class="day-desc">
+                            <h3>Расчёты</h3>
+                            <p>Переход в SCAD или Mathcad: считаешь нагрузки, подбираешь сечение, проверяешь по нормам. Или — согласование замечаний от экспертизы.</p>
+                        </div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-time">15:30</div>
+                        <div class="day-desc">
+                            <h3>Координация</h3>
+                            <p>Обмен данными со смежными разделами: «Водоснабжение» передало трассу труб — нужно пропустить её через перекрытие. Согласовываешь проходы и узлы.</p>
+                        </div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-time">17:00</div>
+                        <div class="day-desc">
+                            <h3>Документация и смета</h3>
+                            <p>Заполняешь ведомость объёмов, формируешь спецификации, готовишь документы к сдаче. Рутина, но без неё проект не закроется.</p>
+                        </div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-time">18:00–18:30</div>
+                        <div class="day-desc">
+                            <h3>Конец дня</h3>
+                            <p>Фиксируешь, что сделано, что — нет. Закрываешь рабочие файлы. Если дедлайн горит — можно задержаться, но чаще уходишь вовремя.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="card-icon">🌍</div>
-                    <h3>Международные проекты</h3>
-                    <p>Российские инженеры работают над проектами в Азии, Африке и Ближнем Востоке.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">📚</div>
-                    <h3>Постоянное обучение</h3>
-                    <p>Каждый проект — новая задача. Вы никогда не остановитесь в развитии.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🎓</div>
-                    <h3>Престижное образование</h3>
-                    <p>Диплом строительного вуза — это пропуск в мир высоких технологий и больших денег.</p>
+            </div>
+
+            <!-- Почему важно для Эр Телеком Холдинг -->
+            <div class="company-section">
+                <h2 class="section-title">Почему это важно для «Эр Телеком Холдинг»</h2>
+                <p class="section-subtitle">Профессия инженера-проектировщика — ключ к успеху компании</p>
+                <div class="company-grid">
+                    <div class="company-card">
+                        <div class="company-icon">📡</div>
+                        <h3>Инфраструктура связи</h3>
+                        <p>Проектирование объектов связи — вышки, кабельные линии, центры обработки данных — требует инженеров, которые знают нормы и умеют создавать точную документацию.</p>
+                    </div>
+                    <div class="company-card">
+                        <div class="company-icon">⚡</div>
+                        <h3>Энергетическая безопасность</h3>
+                        <p>Каждый объект нуждается в электроснабжении, вентиляции, защите от пожаров. Инженер-проектировщик обеспечивает надёжность и безопасность всех систем.</p>
+                    </div>
+                    <div class="company-card">
+                        <div class="company-icon">🏗️</div>
+                        <h3>Строительство и модернизация</h3>
+                        <p>Холдинг строит и модернизирует объекты. Проектировщик — тот, кто превращает планы в реальность: от чертежа до сданного объекта.</p>
+                    </div>
+                    <div class="company-card">
+                        <div class="company-icon">💰</div>
+                        <h3>Экономия для бизнеса</h3>
+                        <p>Грамотный проект — это оптимизация затрат: правильные материалы, точные расчёты, отсутствие переделок на площадке. Экономия может составлять миллионы рублей.</p>
+                    </div>
+                    <div class="company-card">
+                        <div class="company-icon">📜</div>
+                        <h3>Соответствие нормативам</h3>
+                        <p>Без правильно оформленного проекта невозможно получить разрешение на строительство. Инженер-проектировщик — гарант того, что всё по закону.</p>
+                    </div>
+                    <div class="company-card">
+                        <div class="company-icon">🚀</div>
+                        <h3>Рост и развитие</h3>
+                        <p>Компания расширяет географию и перечень услуг. Инженеры-проектировщики — основа для выхода на новые направления и рынки.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -907,7 +1420,7 @@
                 <div class="card">
                     <div class="card-icon">📐</div>
                     <h3>Специализации</h3>
-                    <p>Конструкции зданий, инженерные сети (ВОК, ЭМС, СС), дороги и мосты, промышленные объекты, гидротехнические сооружения.</p>
+                    <p>Конструкции зданий, инженерные сети (ВиК, ЭО, СС), дороги и мосты, промышленные объекты, гидротехнические сооружения.</p>
                 </div>
             </div>
 
@@ -967,7 +1480,7 @@
                 <div class="skill-category">
                     <h3>📊 Расчёты и анализ</h3>
                     <ul class="skill-list">
-                        <li><span class="skill-tag">ЛСМ</span> Метод конечных элементов</li>
+                        <li><span class="skill-tag">МКЭ</span> Метод конечных элементов</li>
                         <li><span class="skill-tag">ANSYS</span> Инженерный анализ</li>
                         <li><span class="skill-tag">Mathcad</span> Инженерные расчёты</li>
                         <li><span class="skill-tag">Excel</span> Таблицы и формулы</li>
@@ -984,21 +1497,81 @@
                         <li><span class="skill-tag">Электрика</span> Силовые и слаботочные сети</li>
                     </ul>
                 </div>
-                <div class="skill-category">
-                    <h3>🤝 Soft Skills</h3>
-                    <ul class="skill-list">
-                        <li><span class="skill-tag">Аналитика</span> Системное мышление</li>
-                        <li><span class="skill-tag">Коммуникация</span> Работа в команде</li>
-                        <li><span class="skill-tag">Тайм-менеджмент</span> Управление сроками</li>
-                        <li><span class="skill-tag">Внимание к деталям</span> Точность</li>
-                        <li><span class="skill-tag">Стрессоустойчивость</span> Дедлайны</li>
-                    </ul>
+            </div>
+
+            <h2 class="section-title" style="margin-top: 3rem;">Hard Skills — что нужно знать</h2>
+            <p class="section-subtitle">Технические навыки, без которых не обойтись</p>
+            <div class="skills-home-grid">
+                <div class="skill-home-card">
+                    <div class="skill-home-icon">💻</div>
+                    <h3>AutoCAD / NanoCAD</h3>
+                    <p>2D-чертежи — основа основ. Здесь вы проводите 60% рабочего времени.</p>
+                </div>
+                <div class="skill-home-card">
+                    <div class="skill-home-icon">🏗️</div>
+                    <h3>Revit / BIM</h3>
+                    <p>Информационная модель здания — стандарт современного проектирования.</p>
+                </div>
+                <div class="skill-home-card">
+                    <div class="skill-home-icon">📐</div>
+                    <h3>Сопромат и строймеханика</h3>
+                    <p>Расчёт прочности конструкций — чтобы здание не рухнуло.</p>
+                </div>
+                <div class="skill-home-card">
+                    <div class="skill-home-icon">📊</div>
+                    <h3>SCAD / ЛСМ</h3>
+                    <p>Метод конечных элементов для сложных расчётов несущих систем.</p>
+                </div>
+                <div class="skill-home-card">
+                    <div class="skill-home-icon">📋</div>
+                    <h3>СНиП, СП, ГОСТ</h3>
+                    <p>Нормативная база — без знания норм проект не пройдёт экспертизу.</p>
+                </div>
+                <div class="skill-home-card">
+                    <div class="skill-home-icon">🔢</div>
+                    <h3>Mathcad / Excel</h3>
+                    <p>Инженерные расчёты, формулы, таблицы — рабочий инструмент ежедневно.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title" style="margin-top: 3rem;">Soft Skills — личные качества</h2>
+            <p class="section-subtitle">Что отличает хорошего инженера от отличного</p>
+            <div class="skills-home-grid">
+                <div class="skill-home-card">
+                    <div class="skill-home-icon">🧩</div>
+                    <h3>Системное мышление</h3>
+                    <p>Видеть здание целиком, а не отдельные элементы. Понимать, как всё связано.</p>
+                </div>
+                <div class="skill-home-card">
+                    <div class="skill-home-icon">🤝</div>
+                    <h3>Коммуникация</h3>
+                    <p>Общаться с заказчиком, архитектором, строителями и экспертами на одном языке.</p>
+                </div>
+                <div class="skill-home-card">
+                    <div class="skill-home-icon">⏰</div>
+                    <h3>Тайм-менеджмент</h3>
+                    <p>Управлять дедлайнами по нескольким проектам одновременно.</p>
+                </div>
+                <div class="skill-home-card">
+                    <div class="skill-home-icon">🔍</div>
+                    <h3>Внимание к деталям</h3>
+                    <p>Одна ошибка в расчёте — и здание может быть опасно. Точность критична.</p>
+                </div>
+                <div class="skill-home-card">
+                    <div class="skill-home-icon">💪</div>
+                    <h3>Стрессоустойчивость</h3>
+                    <p>Дедлайны экспертизы, правки от заказчика, замечания экспертов — всё нужно выдерживать.</p>
+                </div>
+                <div class="skill-home-card">
+                    <div class="skill-home-icon">📖</div>
+                    <h3>Постоянное обучение</h3>
+                        <p>Нормы меняются, появляются новые технологии. Инженер учится всю карьеру — это необходимость, а не выбор.</p>
                 </div>
             </div>
 
             <h2 class="section-title" style="margin-top: 3rem;">BIM-технологии — будущее профессии</h2>
             <div class="card" style="max-width: 800px;">
-                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Building Information Modeling (BIM) — это подход к проектированию, при котором создаётся не просто чертёж, а информационная модель здания. В России переход на BIM обязателен для государственных объектов с 2022 года.</p>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Building Information Modeling (BIM) — это подход к проектированию, при котором создаётся не просто чертёж, а информационная модель здания. С 2022 года государственные объекты в России проектируются в BIM.</p>
                 <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                     <span class="skill-tag">Revit</span>
                     <span class="skill-tag">Archicad</span>
@@ -1121,7 +1694,7 @@
                 <div class="card">
                     <div class="card-icon">🏛️</div>
                     <h3>Государственные структуры</h3>
-                    <p>Минстрой, «Российские дороги», «Роскосмос». Пенсия, отпуска.</p>
+                    <p>Минстрой, Росавтодор, крупные девелоперские компании. Государственные гарантии, пенсия.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">💼</div>
@@ -1142,7 +1715,7 @@
                         <span class="faq-arrow">▼</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Для работы инженером-проектировщиком необходимо высшее техническое образование (строительный или архитектурный вуз). Для получения квалификации «инженер» нужно отучиться минимум 5 лет в магистратуре или 4 года в бакалавриате + 1 год магистратуры.</p>
+                        <p>Для работы инженером-проектировщиком необходимо высшее техническое образование (строительный или архитектурный вуз).</p>
                     </div>
                 </div>
 
@@ -1172,7 +1745,7 @@
                         <span class="faq-arrow">▼</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Да, особенно после пандемииmany проектные бюро перешли на гибридный формат. Более 40% инженеров работают удалённо или в гибком графике. Однако выезды на площадку и совещания в офисе всё ещё необходимы.</p>
+                        <p>Да, многие проектные бюро перешли на гибридный формат. Часть инженеров работает удалённо или в гибком графике. Однако выезды на площадку и совещания в офисе всё ещё необходимы.</p>
                     </div>
                 </div>
 
@@ -1202,7 +1775,7 @@
                         <span class="faq-arrow">▼</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Building Information Modeling (BIM) — технология создания информационной модели здания. С 2022 года все государственные объекты в России проектируются в BIM. Это повышает производительность на 30% и снижает ошибки. Владение BIM — обязательное требование для карьерного роста.</p>
+                        <p>Building Information Modeling (BIM) — технология создания информационной модели здания. С 2022 года государственные объекты в России проектируются в BIM. Это повышает производительность и снижает ошибки. Владение BIM — обязательное требование для карьерного роста.</p>
                     </div>
                 </div>
 
@@ -1223,7 +1796,7 @@
         <div class="footer-container">
             <div class="footer-section">
                 <h4>ИнженерПро</h4>
-                <p>Информационный портал о профессии инженера-проектировщика. Актуальные данные, карьерные советы, обзоры инструментов.</p>
+                <p>Информационный портал о профессии инженера-проектировщика для «Эр Телеком Холдинг». Актуальные данные, карьерные советы, обзоры инструментов.</p>
                 <div class="social-links">
                     <a href="#" class="social-link" title="Telegram">✈️</a>
                     <a href="#" class="social-link" title="VK">📱</a>
@@ -1270,7 +1843,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 ИнженерПро. Все права защищены.</p>
+            <p>© 2026 ИнженерПро. Все права защищены.</p>
             <p class="visit-counter">Посещений страницы: <span id="visitCount">0</span></p>
         </div>
     </footer>
@@ -1364,7 +1937,7 @@
             }
             
             // Update title
-            document.title = route.title + ' | ИнженерПро';
+            document.title = route.title + ' | Эр Телеком Холдинг';
             
             // Update breadcrumbs
             updateBreadcrumbs(route.breadcrumb);
